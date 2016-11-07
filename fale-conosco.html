@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Diego Soares</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/form.css">
+
+    <script src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+           var qtd=parseInt(document.getElementById('cqtd').value);
+            tot=qtd*1500;
+            document.getElementById('ctot').value=tot;
+
+
+        }
+    </script>
+
+
+</head>
+<body>
+
+<div id="interface">
+    <header id="cabecalho">
+        <hgroup>
+            </br>
+            <h1 > Diego Soares - Consultoria Tecnológica</h1>
+            <h2 >honestidade e preço justo!</h2>
+        </hgroup>
+
+        <figure>
+            <img id="icone" src="_imagens/glass-oculos-preto-peq.png">
+        </figure>
+
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul >
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article id ="noticia-principal">
+        <header id="cabecalh-artigo">
+            <hgroup>
+
+                <h3> Fale Conosco > Contato</h3>
+                <h1>Formulário de Contato</h1>
+                <h2>por Gustavo Guanabara</h2>
+                <h3 class="direita">Atualizado em 23/Abril/2013</h3>
+            </hgroup>
+        </header>
+    </article>
+
+
+
+
+<form method="post" id="fcontato"  action="mailto:diegosamsoares@gmail.com" oninput="calc_total();">
+<fieldset id="usuario">
+    <legend>Identificação do Usuário</legend>
+    <p><label for="cnome">Nome</label><input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome Completo"/> </p>
+    <p><label for="csenha">Senha</label><input type="password" name="tsenha" id="csenha" size="1" maxlength="8" placeholder="********"/></p>
+    <p><label for="cmail">E-mail</label><input type="email" name="tmail" id="cmail" size="20" maxlength="40" placeholder="seuemail@email.com"/> </p>
+    <fieldset id="sexo">
+        <legend><label for="sexo">Sexo</label></legend>
+        <input type="radio" name="sexo" id="cMasc"> <label for="cMasc">Masculino</label><br>
+        <input type="radio" name="sexo" id="cFem"> <label for="cFem">Feminino</label></fieldset>
+    <p><label for="cdate">Data de Nascimento</label><input type="date" name="tdate" id="cdate"></p>
+
+</fieldset>
+
+<fieldset id="endereco">
+    <legend>Endereço do Usuário</legend>
+    <p>Logradouro<input type="text"  name="trua" id="crua" size="13" maxlength="13" placeholder="Rua , Av etc"></p>
+    <p>Número <input type="number" name="tnumero" id="cnumero" size="10" maxlength="10" min="0" max="9999999"></p>
+    <p><label for="cEst">Estado:</label>
+    <select name="tEst" id="cEst">
+    <option value="estado">Selecione o Estado</option>
+    <option value="ac">Acre</option>
+    <option value="al">Alagoas</option>
+    <option value="am">Amazonas</option>
+    <option value="ap">Amapá</option>
+    <option value="ba">Bahia</option>
+    <option value="ce">Ceará</option>
+    <option value="df">Distrito Federal</option>
+    <option value="es">Espírito Santo</option>
+    <option value="go">Goiás</option>
+    <option value="ma">Maranhão</option>
+    <option value="mt">Mato Grosso</option>
+    <option value="ms">Mato Grosso do Sul</option>
+    <option value="mg">Minas Gerais</option>
+    <option value="pa">Pará</option>
+    <option value="pb">Paraíba</option>
+    <option value="pr">Paraná</option>
+    <option value="pe">Pernambuco</option>
+    <option value="pi">Piauí</option>
+    <option value="rj">Rio de Janeiro</option>
+    <option value="rn">Rio Grande do Norte</option>
+    <option value="ro">Rondônia</option>
+    <option value="rs">Rio Grande do Sul</option>
+    <option value="rr">Roraima</option>
+    <option value="sc">Santa Catarina</option>
+    <option value="se">Sergipe</option>
+    <option value="sp">São Paulo</option>
+    <option value="to">Tocantins</option>
+    </select></p>
+    Cidade:
+</fieldset>
+
+<fieldset id="mensagem">
+    <legend>Mensagem do Usuário</legend>
+    <p><label for="curg">Grau de Urgência:1</label>
+    <input type="range" name="tUrg" id="cUrg" min="0" max="10">10</p>
+    <p>Mensagem:
+    <textarea name="tMsg" id="cMsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+</fieldset>
+<fieldset id="proposta">
+    <legend>Quero um Google Glass</legend>
+    <p><input type="checkbox" name="tped" id="cped" checked>
+    <label for="cped">Gostaria de adquirir um Google Glass quando disponível</label></p>
+    
+     <p><label for="ccor">Cor:</label><input name="tcor" id="ccor" type="color"/></p>
+    <p><label for="cqtd">Quantidade:</label>
+        <input type="number" name="tQtd" id="cqtd" size="5" min="0"/> </p>
+    <p>Preço Total: R$ <input type="text" name="ttot" id="ctot" readonly placeholder="Total a Pagar" size="10"/></p>
+</fieldset>
+</form>
+
+
+    <input type="image" src="_imagens/botao-enviar.png" >
+
+
+    <footer id="rodape">
+        <p>Copyright &copy; 2013 - by Gustavo Guanabara<br>
+            <a href="http://facebook.com" target="_blank">Facebook </a>| Twitter</p>
+    </footer>
+</div>
+</body>
+</html>
